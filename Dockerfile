@@ -15,8 +15,7 @@ RUN info(){ printf '\x1B[32m--\n%s\n--\n\x1B[37m' "$*"; } \
     && info "==> Running npm audit fix --force to cleanup npm modules" \
     && npm audit fix --force
 
-# Add Configuration Files:
-ADD supervisor.conf /etc/supervisor/supervisor.conf
+# Add Configuration File:
 ADD settings.json /opt/etherpad/settings.json
 
 WORKDIR /opt/etherpad/src/node_modules/ep_etherpad-lite/node/
