@@ -1,4 +1,5 @@
 # Purpose
+
 The intention of this repository is to provide a lightweight container running [etherpad](http://etherpad.org) on alpine.
 
 ## Build
@@ -17,7 +18,7 @@ Etherpad can be started from the command line of your docker host using the foll
 docker run -d --restart unless-stopped --name alpine-etherpad -v etherpad:/opt/etherpad/data -p 80:9001 burkeazbill/alpine-etherpad .
 ```
 
-After that, you should be able to access etherpad at http://127.0.0.1 or http://localhost
+After that, you should be able to access etherpad at [http://127.0.0.1](http://127.0.0.1) or [http://localhost](http://localhost)
 
 **NOTES:**
 
@@ -25,6 +26,11 @@ After that, you should be able to access etherpad at http://127.0.0.1 or http://
 - A persistent volume named etherpad gets created using the command line shown above to store the data file
 
 ## Change Log
+
+Version 1.1
+
+- Updated Dockerfile to use multi-stage build - image size now 174MB
+- Added label for version
 
 Version 1.0
 

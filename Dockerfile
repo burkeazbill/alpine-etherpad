@@ -1,4 +1,6 @@
-FROM mhart/alpine-node-auto:10
+FROM mhart/alpine-node-auto:10 AS build-env
+
+LABEL version="1.1"
 
 ENV NODE_PATH /opt/etherpad/src/node_modules
 
@@ -15,10 +17,20 @@ RUN info(){ printf '\x1B[32m--\n%s\n--\n\x1B[37m' "$*"; } \
     && info "==> Running npm audit fix --force to cleanup npm modules" \
     && npm audit fix --force
 
-# Add Configuration File:
-ADD settings.json /opt/etherpad/settings.json
+FROM mhart/alpine-node-auto:10
 
-WORKDIR /opt/etherpad/src/node_modules/ep_etherpad-lite/node/
+LABEL version="1.1"
+
+ENV NODE_PATH /opt/etherpad/src/node_modules
+
+WORKDIR /opt
+
+# Add Configuration File:
+RUN apk --no-cache add --update curl
+ADD settings.json etherpad/settings.json
+COPY --from=build-env /opt/etherpad /opt/etherpad
+
+VOLUME /opt/etherpad/data
 
 # Expose Port:
 EXPOSE 9001
