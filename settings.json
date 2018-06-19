@@ -8,7 +8,7 @@
 */
 {
     // Name your instance!
-    "title": "Livefire Etherpad",
+    "title": "Etherpad",
     // favicon default name
     // alternatively, set up a fully specified Url to your own favicon
     "favicon": "favicon.ico",
@@ -36,7 +36,7 @@
     "dbType": "dirty",
     //the database specific settings
     "dbSettings": {
-        "filename": "/opt/etherpad/dirty.db"
+        "filename": "/opt/etherpad/data/dirty.db"
     },
     /* An Example of MySQL Configuration
      See https://github.com/ether/etherpad-lite/wiki/How-to-use-Etherpad-Lite-with-MySQL
@@ -51,7 +51,7 @@
                   },
   */
     //the default text of a pad
-    "defaultPadText": "Welcome to the Livefire Etherpad!\n\nThis pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!\n\nGet involved with Etherpad at http:\/\/etherpad.org\n",
+    "defaultPadText": "Welcome to Etherpad!\n\nThis pad text is synchronized as you type, so that everyone viewing this page sees the same text. This allows you to collaborate seamlessly on documents!\n\nGet involved with Etherpad at http:\/\/etherpad.org\n",
     /* Default Pad behavior, users can override by changing */
     "padOptions": {
         "noColors": false,
@@ -161,11 +161,11 @@
     
   "users": {
     "admin": {
-      "password": "VMware1!",
+      "password": "ChangeMe1",
       "is_admin": true
     },
-    "livefire": {
-      "password": "VMware1!",
+    "user": {
+      "password": "ChangeMe1",
       "is_admin": false
     }
   },
