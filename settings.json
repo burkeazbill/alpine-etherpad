@@ -161,11 +161,11 @@
     
   "users": {
     "admin": {
-      "password": "ChangeMe1",
+      "password": "changeme1",
       "is_admin": true
     },
     "user": {
-      "password": "ChangeMe1",
+      "password": "changeme1",
       "is_admin": false
     }
   },
