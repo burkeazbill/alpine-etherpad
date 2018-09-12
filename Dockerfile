@@ -15,6 +15,7 @@ RUN info(){ printf '\x1B[32m--\n%s\n--\n\x1B[0m' "$*"; } \
     && etherpad/bin/installDeps.sh \
     && cd /opt/etherpad/src \
     && info "==> Running npm audit fix --force to cleanup npm modules" \
+    && npm i --package-lock-only --package-lock \
     && npm audit fix --force
 
 FROM mhart/alpine-node-auto:10
